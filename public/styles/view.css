@@ -1,0 +1,100 @@
+
+:root {
+    --primary-color: #007bff;
+    --secondary-color: black;
+    --font-family: Arial, sans-serif;
+    --content-width: 800px;
+    --content-padding: 20px;
+    --border-radius: 5px;
+}
+
+.letter-head
+{
+    height: 20vh;
+    border-bottom: 1px solid black;
+    background-image: url("../img/letterhead.PNG");
+    background-position: center;
+    background-size: cover;
+}
+
+body {
+    font-family: var(--font-family);
+    margin: 0;
+    padding: 0;
+    color: var(--secondary-color);
+   
+}
+
+.letter {
+    
+    max-width: var(--content-width);
+    margin: 0 auto;
+    padding: var(--content-padding);
+    border: 1px solid #ccc;
+    border-radius: var(--border-radius);
+    background-color: #fff;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    margin-top: 50px;
+}
+
+.letter-header,
+.letter-footer {
+    text-align: center;
+    margin-bottom: var(--content-padding);
+}
+
+.letter-body {
+    margin-bottom: var(--content-padding);
+    padding-bottom: var(--content-padding);
+    border-bottom: 1px solid #ccc;
+}
+
+.info-section {
+    margin-bottom: var(--content-padding);
+}
+
+.closing {
+    margin-top: var(--content-padding);
+}
+
+p {
+    margin: 0; 
+}
+
+strong {
+    font-weight: bold;
+}
+
+.print-btn
+{
+  
+    background-color: #28a745; 
+    color: #fff;
+    border: none;
+    padding: 8px 16px;
+    cursor: pointer;
+    border-radius: 4px;
+    margin: 10px auto;
+    display: flex;
+    
+}
+
+.print-btn:hover {
+    background-color: #218838; 
+}
+
+
+.pending
+{
+    color: #ffc107;
+}
+
+.rejected
+{
+   color: #dc3545; 
+}
+
+.approved
+{
+    color:#28a745;
+}

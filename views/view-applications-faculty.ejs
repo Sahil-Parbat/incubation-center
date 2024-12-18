@@ -1,0 +1,82 @@
+<!-- view_all_applications.ejs -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Applications</title>
+    <link rel="stylesheet" href="/styles/view_all_application.css">
+</head>
+<body>
+    <div class="container">
+        <h1>All Applications</h1>
+        <table class="application-table">
+            <thead>
+                <tr>
+                    <th>Application ID</th>
+                    <th>Manager ID</th>
+                    <th>Faculty ID</th>
+                    <th>Date Created</th>
+                    <th>Date Updated</th>
+                    <th>Title</th>
+                    <th>Description</th>
+                    <th>Attachment</th>
+                    <th>Action</th>
+                    <th>View</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% applications.forEach(application => { %>
+                    <tr>
+                        <td><%= application.application_id %></td>
+                        <td><%= application.manager_id %></td>
+                        <td><%= application.faculty_id %></td>
+                        <td><%= application.date_created %></td>
+                        <td><%= application.date_updated %></td>
+                        <td><%= application.title %></td>
+                        <td><%= application.description %></td>
+                        <td><%= application.attachment %></td>
+                        <td><% if (application.status === 'pending') { %>
+                            <form action="/faculty/action" method="POST">
+                                <input   type="hidden" name="application_id" value="<%= application.application_id %>">
+                                <input   type="hidden" name="application_status" value="approved">
+                                <button type="submit">Approve</button>
+                            </form>
+                            <form action="/faculty/action" method="POST">
+                                <input  type="hidden" name="application_id" value="<%= application.application_id %>">
+                                <input   type="hidden" name="application_status" value="rejected">
+                                <button class="reject" type="submit">Reject</button>
+                            </form>
+                        <% } else { %>
+                            <%= application.status %>
+                        <% } %></td>
+                            <td> <form action="/view" method="POST">
+                                <input   type="hidden" name="application_id" value="<%= application.application_id %>">
+                                <button type="submit" id="view">View</button>
+                            </form></td>
+                        </tr>
+                <% }); %>
+            </tbody>
+        </table>
+    </div>
+
+    <script>
+        // Function to get the appropriate CSS class based on the application status
+        function getRowClass(status) {
+            switch (status) {
+                case 'pending':
+                    return 'pending-row';
+                case 'approved':
+                    return 'approved-row';
+                case 'rejected':
+                    return 'rejected-row';
+                default:
+                    return '';
+            }
+        }
+    </script>
+</body>
+</html>
+
+

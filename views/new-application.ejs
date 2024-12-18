@@ -1,0 +1,39 @@
+<!-- managerpanel.ejs -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create New Application</title>
+    <link rel="stylesheet" href="/styles/managerpanel.css">
+</head>
+<body>
+    <header>
+        <h1>Create New Application</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="/manager/view-applications">View Applications</a></li>
+            <li><a href="/manager/new-application">Create New Application</a></li>
+            <li><a href="/manager/profile">Profile</a></li>
+        </ul>
+    </nav>
+    <section>
+        <h2>Application Form</h2>
+        <form action="/manager/new-application/submit-application" method="POST">
+            <label for="title">Title:</label><br>
+            <input type="text" id="title" name="title" required><br><br>
+            <label for="description">Description:</label><br>
+            <textarea id="description" name="description" rows="4" cols="50" required></textarea><br><br>
+            <label for="attachment">Attachment:</label><br>
+            <input type="file" id="attachment" name="attachment"><br><br>
+            <button type="submit">Submit Application</button>
+        </form>
+    </section>
+    <footer>
+        <p>&copy; 2024 Application Approval System</p>
+    </footer>
+</body>
+</html>
+ 

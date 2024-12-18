@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Official Letter</title>
+    <link rel="stylesheet" href="/styles/letter.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <style media="print">
+        button,
+        title {
+            visibility: hidden;
+        }
+        
+
+        .letter-head {
+            border: none;
+            background-size: contain;
+            background-repeat: no-repeat;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="letter">
+
+
+        <div class="letter-head"></div>
+        <header class="letter-header">
+            <h2>Application Letter</h2>
+            <p>Date: <%= application.date_created %>
+            </p>
+        </header>
+        <main class="letter-body">
+            <p>Respected Madam,</p>
+            <section class="info-section">
+                <p style="margin-left: 80px;margin-top: 20px;"><strong>Subject:</strong>
+                    <%= application.title %>
+                </p>
+
+                <!-- <p><strong>Company:</strong> ABC Corporation</p>
+                <p><strong>Address:</strong> 123 Main Street, City, Country</p>
+                <p><strong>Email:</strong> john.doe@example.com</p> -->
+            </section>
+
+            <p style="margin-left: 60px;">
+                <%= application.description %>
+            </p>
+            <p style="margin-top: 30px;"><Strong>Yours sincerely,</Strong></p>
+            <p>Dipak Ankulage</p>
+
+            <div class="sign" style="display: flex;flex-direction: column;align-items: flex-end;padding-right: 40px;">
+                <i style="margin-top: 30px;font-size:48px;"
+                    class="<%= application.status === 'pending' ? 'fa fa-clock-o pending' : 
+                            application.status === 'approved' ? 'fa fa-check-circle approved' : 'fa fa-close rejected' %>"></i>
+
+                <p><Strong>
+                        <%= application.status %>
+                    </Strong></p>
+                <p>
+                    <%= application.date_updated %>
+                </p>
+
+            </div>
+        </main>
+        <footer class="letter-footer">
+            <p>AnkurGECA Incubation Centre Foundation (AICF) | GECA | ankur@geca.ac.in</p>
+        </footer>
+
+    </div>
+
+    <button onclick="printLetter()" class="print-btn">Print Letter</button>
+
+    <script>
+        function printLetter() {
+            window.print();
+        }
+    </script>
+
+</body>
+
+</html>

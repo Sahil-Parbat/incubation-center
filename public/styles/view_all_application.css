@@ -1,0 +1,116 @@
+/* styles.css */
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f9fa;
+}
+
+.container {
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.application-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background-color: #fff;
+}
+
+.application-table th,
+.application-table td {
+    padding: 12px;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+.application-table th {
+    background-color: #f2f2f2;
+    color: #333;
+}
+
+.application-table tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.application-table tbody tr:hover {
+    background-color: #f2f2f2;
+}
+
+.application-table tbody td {
+    color: #555;
+}
+
+.application-table tbody tr:hover td {
+    color: #333;
+}
+
+
+/* styles.css */
+
+.pending-row {
+    background-color: #ffc107; /* yellow */
+}
+
+.approved-row {
+    background-color: #28a745;  /* green */
+}
+
+.approved-row:hover {
+    background-color: #218838; 
+}
+
+.rejected-row {
+    background-color: #dc3545; 
+}
+
+.rejected-row :hover {
+    background-color: #c82333;
+}
+
+
+button
+{
+    background-color: #28a745; 
+    color: #fff;
+    border: none;
+    padding: 8px 16px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+
+button[type="submit"] {
+    background-color: #28a745; 
+    color: #fff;
+    border: none;
+    padding: 8px 16px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+button[type="submit"]:hover {
+    background-color: #218838; 
+}
+
+/* Style for reject button */
+button[type="submit"].reject {
+    background-color: #dc3545; /* red for reject */
+}
+
+button[type="submit"].reject:hover {
+    background-color: #c82333; /* darker red on hover */
+}
+
+#view
+{
+    background-color: rgb(28, 166, 221);
+}
